@@ -7,14 +7,14 @@ const CATALOG = [
   },
   {
     id: 2,
-    name: "Hubba-Bubba Triple Mix",
-    img: "assets/img/hubbabubba.webp",
-    price: 89,
+    name: "Kinder",
+    img: "assets/img/kinder.webp",
+    price: 2509,
   },
   {
     id: 3,
-    name: "Hubba-Bubba Triple Mix",
-    img: "assets/img/hubbabubba.webp",
-    price: 89,
+    name: "Milka eggs",
+    img: "assets/img/milka.webp",
+    price: 289,
   },
 ];
