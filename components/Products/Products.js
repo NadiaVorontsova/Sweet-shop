@@ -39,7 +39,7 @@ class Products {
             <span class="products-element__price">
               💰 ${price.toLocaleString()} грн
             </span>
-            <button class="products-element__button${activeClass}" onclick="products.handleSetLocationStorage(this, '${id}')">
+            <button class="products-element__button${activeClass}" onclick="productPage.handleSetLocationStorage(this, '${id}')">
               ${activeText}
             </button>
         </li>
@@ -56,5 +56,5 @@ class Products {
   }
 }
 
-const products = new Products();
-products.render();
+const productPage = new Products();
+productPage.render();
