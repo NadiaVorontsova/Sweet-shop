@@ -15,6 +15,8 @@ class Products {
       el.classList.remove(this.classNameActive);
       el.innerHTML = this.labelAdd;
     }
+
+    headerPage.render(products.length);
   }
 
   render() {
@@ -28,7 +30,7 @@ class Products {
       if (productsStore.indexOf(id) === -1) {
         activeText = this.labelAdd;
       } else {
-        activeClass = " " + this.classNameActive;
+        activeClass = this.classNameActive;
         activeText = this.labelRemove;
       }
 
@@ -39,7 +41,7 @@ class Products {
             <span class="products-element__price">
               💰 ${price.toLocaleString()} грн
             </span>
-            <button class="products-element__button${activeClass}" onclick="productPage.handleSetLocationStorage(this, '${id}')">
+            <button class="products-element__button ${activeClass}" onclick="productPage.handleSetLocationStorage(this, '${id}')">
               ${activeText}
             </button>
         </li>

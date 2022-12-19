@@ -7,7 +7,21 @@
 
 body {
   font-family: Verdana, Tahoma, sans-serif;
-  background-color: rgb(247, 188, 198);
+  background-color: rgb(251, 203, 211);
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+  padding: 10px 45px;
+  background-color: rgb(249, 158, 175);
+}
+
+.header-counter {
+  cursor: pointer;
+  font-weight: bold;
+  color: rgb(111, 111, 111);
 }
 
 .products-container {
@@ -16,7 +30,7 @@ body {
   grid-gap: 45px;
   width: 80%;
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 45px auto;
 }
 
 .products-element {

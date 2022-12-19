@@ -1,7 +1,13 @@
 .header-container {
-
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    padding: $spacing-small $spacing-bigger;
+    background-color: $color-medium;
 }
 
 .header-counter {
-    
+    cursor: pointer;
+    font-weight: bold;
+    color: $color-grey;
 }
