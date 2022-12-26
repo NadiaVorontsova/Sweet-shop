@@ -5,15 +5,15 @@ class Products {
     this.labelRemove = "Видалити з кошика";
   }
 
-  handleSetLocationStorage(el, id) {
+  handleSetLocationStorage(element, id) {
     const { pushProduct, products } = localStorageUtil.putProducts(id);
 
     if (pushProduct) {
-      el.classList.add(this.classNameActive);
-      el.innerHTML = this.labelRemove;
+      element.classList.add(this.classNameActive);
+      element.innerHTML = this.labelRemove;
     } else {
-      el.classList.remove(this.classNameActive);
-      el.innerHTML = this.labelAdd;
+      element.classList.remove(this.classNameActive);
+      element.innerHTML = this.labelAdd;
     }
 
     headerPage.render(products.length);
@@ -21,7 +21,7 @@ class Products {
 
   render() {
     const productsStore = localStorageUtil.getProducts();
-    let product = "";
+    let htmlCatalog = "";
 
     CATALOG.forEach(({ id, name, price, img }) => {
       let activeClass = "";
@@ -34,29 +34,29 @@ class Products {
         activeText = this.labelRemove;
       }
 
-      product += `
-        <li class="products-element">
-            <span class="products-element__name">${name}</span>
-            <img src="${img}" class="products-element__img"/>
-            <span class="products-element__price">
-              💰 ${price.toLocaleString()} грн
-            </span>
-            <button class="products-element__button ${activeClass}" onclick="productPage.handleSetLocationStorage(this, '${id}')">
-              ${activeText}
-            </button>
-        </li>
-      `;
+      htmlCatalog += `
+              <li class="products-element">
+                  <span class="products-element__name">${name}</span>
+                  <img class="products-element__img" src="${img}" />
+                  <span class="products-element__price">
+                      ⚡️ ${price.toLocaleString()} грн
+                  </span>
+                  <button class="products-element__button ${activeClass}" onclick="productsPage.handleSetLocationStorage(this, '${id}');">
+                      ${activeText}
+                  </button>
+              </li>
+          `;
     });
 
-    let catalog = "";
-    catalog += `
-      <ul class="products-container">
-        ${product}
-      </ul>`;
+    const html = `
+          <ul class="products-container">
+              ${htmlCatalog}
+          </ul>
+      `;
 
-    ROOT_PRODUCTS.innerHTML = catalog;
+    ROOT_PRODUCTS.innerHTML = html;
   }
 }
 
-const productPage = new Products();
-productPage.render();
+const productsPage = new Products();
+productsPage.render();
