@@ -10,7 +10,7 @@ class Shopping {
     let sumCatalog = 0;
 
     CATALOG.forEach(({ id, name, price }) => {
-      if (productsStore.indexOf(id) === -1) {
+      if (productsStore.indexOf(id) !== -1) {
         console.log(name);
         htmlCatalog += `
                     <tr>

@@ -1,6 +1,6 @@
 .shopping-container {
     width: 97%;
-    height: 97vh;
+    height: 96vh;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -17,7 +17,7 @@
     width: 35px;
     top: $spacing-big;
     right: $spacing-big;
-    background-image: url(/assets/img/close.png);
+    background-image: url(../assets/img/close.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
